@@ -9,9 +9,12 @@ const io = socketIo(server);
 
 const PORT = process.env.PORT || 3000;
 
+const path = require('path');
+
 app.get('/', (req, res) => {
-  res.send('Server is running.');
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
+
 
 const players = {};
 
